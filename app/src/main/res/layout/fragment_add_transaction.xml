@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:clickable="true"
+    tools:context=".screens.addTransaction.AddTransactionFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/black"
+            android:elevation="5dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="0dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/monthInitialCardView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="25dp"
+                    app:cardElevation="0dp"
+                    app:strokeColor="@color/grey_400"
+                    app:strokeWidth="0.5dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:fontFamily="@font/open_sans"
+                            android:gravity="center"
+                            android:text="O"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="0dp"
+                    android:layout_toEndOf="@id/monthInitialCardView"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/monthYearTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans_semibold"
+                        android:text="Oct 2022"
+                        android:textColor="@color/white"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        android:id="@+id/monthTotalExpenseTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/open_sans"
+                        android:text="₹10,000"
+                        android:textColor="@color/blackOpacity60"
+                        android:textSize="12dp"
+                        android:visibility="gone" />
+                </LinearLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/selectMonthCardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="16dp"
+                    android:layout_centerVertical="true"
+                    app:cardMaxElevation="0dp"
+                    app:strokeColor="@color/themeGreen"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/themeGreenOpacity15"
+                        android:paddingHorizontal="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingVertical="4dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            app:tint="@color/themeGreenDarker"
+                            app:srcCompat="@drawable/edit_date_icon"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:layout_height="wrap_content"
+                            android:text="Change Month"
+                            android:fontFamily="@font/open_sans"
+                            android:textSize="12dp"
+                            android:textColor="@color/themeGreenDarker"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <com.google.android.material.divider.MaterialDivider
+            android:id="@+id/toolbarDivider"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_below="@id/toolbar"
+            android:elevation="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/dataLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:layout_above="@id/bottomRelativeLayout"
+            android:layout_below="@id/toolbar">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/transactionsRecyclerView"
+                android:layout_width="match_parent"
+                android:background="@color/black"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="12dp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/bottomRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:animateLayoutChanges="true"
+            android:elevation="10dp"
+            android:background="@color/black"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:id="@+id/transactionMetaInputLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:background="#80E3F2FD"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/transactionNoteEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/open_sans"
+                    android:hint="some regular transaction!!"
+                    android:inputType="text"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="#99B3E5FC" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp">
+
+                    <LinearLayout
+                        android:id="@+id/transactionDateLinearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackground"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:orientation="horizontal"
+                        android:paddingVertical="3dp">
+
+                        <TextView
+                            android:id="@+id/transactionDateTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans"
+                            android:text="On 03 Oct"
+                            android:textColor="@color/blackOpacity60"
+                            android:textSize="14dp" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="4dp"
+                            app:srcCompat="@drawable/edit_date_icon" />
+                    </LinearLayout>
+
+                    <com.google.android.material.divider.MaterialDivider
+                        android:layout_width="1dp"
+                        android:layout_height="27dp"
+                        android:layout_marginHorizontal="8dp"
+                        android:layout_toEndOf="@id/transactionDateLinearLayout"
+                        app:dividerColor="#99B3E5FC" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/transactionTypeRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_toEndOf="@id/transactionDateLinearLayout">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </RelativeLayout>
+
+                <com.google.android.material.divider.MaterialDivider
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    app:dividerColor="#99B3E5FC" />
+
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/amountCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:animateLayoutChanges="true"
+                app:cardCornerRadius="30dp"
+                android:layout_marginBottom="10dp"
+                app:cardElevation="0dp"
+                app:strokeColor="@color/grey_400"
+                app:strokeWidth="0dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#80A7ABAC"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="12dp"
+                        android:layout_toStartOf="@id/saveTransactionImageView">
+
+                        <TextView
+                            android:id="@+id/rupeeSymbolTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/open_sans_semibold"
+                            android:text="₹"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/transactionAmountEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="2dp"
+                            android:layout_toEndOf="@id/rupeeSymbolTextView"
+                            android:background="@android:color/transparent"
+                            android:fontFamily="@font/open_sans"
+                            android:hint="5,000"
+                            android:inputType="number"
+                            android:textColor="@color/black"
+                            android:textSize="14dp" />
+
+
+                    </RelativeLayout>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/saveTransactionImageView"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        app:srcCompat="@drawable/send_icon" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
