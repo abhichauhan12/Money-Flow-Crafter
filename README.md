@@ -19,18 +19,18 @@ This app can change the way you track your spending with easy to use and friendl
 ## Here are the some screenshots of application
 ##
 ## 1. Home Screen 
+![Money flow](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/4ee34609-6862-48a6-ad73-71b58edddcbd)
 
-![Money flow](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/50df3fdf-ea14-4f13-88f3-b0f11552c3c1)
 
 ##
 ## 2. Transaction Page
+![Money flow (3)](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/57930aaa-e33c-4b68-86c7-9882f15b2b63)
 
-![Money flow (3)](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/2a4147b4-5e38-41a7-98fe-bcdc2c8732c3)
 
 ##
 ## 3. Settings Page 
+![Money flow (2)](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/e01a05cb-b86e-41e9-83ac-066cf28e254a)
 
-![Money flow (2)](https://github.com/abhichauhan12/Money-Flow-Crafter/assets/32174122/9cfe347d-f62f-47e0-843d-72dc69b3b547)
 
 
 ##
